@@ -3,6 +3,7 @@ from base_user.forms import MyUserChangeForm, MyUserCreationForm
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth import get_user_model
+from default.models import Site_name,Menu,First,Second,Main,Meals,Footer
 
 User = get_user_model()
 
@@ -32,3 +33,12 @@ class MyUserAdmin(UserAdmin):
     search_fields = ('first_name', 'last_name', 'username', 'email')
     ordering = ('-date_joined',)
     filter_horizontal = ('groups', 'user_permissions',)
+
+admin.site.register(Site_name)
+admin.site.register(Menu)
+admin.site.register(Main)
+admin.site.register(Meals)
+admin.site.register(First)
+admin.site.register(Second)
+admin.site.register(Footer)
+
