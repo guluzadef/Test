@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from default.models import *
+from .forms import AddFood
 # Create your views here.
 
 def Home(request):
@@ -15,3 +16,9 @@ def Home(request):
 
 
     return render(request,"index.html",context)
+
+
+def add_food(request):
+    context={}
+    context["form"]=AddFood()
+    return render(request,"yemek.html",context)
